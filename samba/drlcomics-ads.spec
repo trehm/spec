@@ -1,6 +1,6 @@
 Name:		drlcomics-ads
 Version:	0.1
-Release:	7
+Release:	8
 Summary:	Configuration file for ADS authenication with DRLCOMICS
 
 Group:		System
@@ -51,7 +51,7 @@ sed -i 's/^;require_membership_of/require_membership_of/g' \
 /etc/security/pam_winbind.conf
 sed -i 's/require_membership_of\ =/require_membership_of\ =\ linuxusers/g' \
 /etc/security/pam_winbind.conf
-sed -i '/## Same\ thing\ without\ a\ password/a linuxusers\tALL=\(ALL\)\tNOPASSWD:\ All' /etc/sudoers
+sed -i '/## Same\ thing\ without\ a\ password/a %linuxusers\tALL=\(ALL\)\tNOPASSWD:\ ALL' /etc/sudoers
 
 %files
 %defattr(-,root,root,-)
